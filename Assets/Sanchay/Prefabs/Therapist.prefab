@@ -176,7 +176,6 @@ GameObject:
   - component: {fileID: 1637497451118609788}
   - component: {fileID: 4734138067019342787}
   - component: {fileID: 1211167376446974607}
-  - component: {fileID: 8293170404458892062}
   m_Layer: 0
   m_Name: Therapist
   m_TagString: Untagged
@@ -310,6 +309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   APIKEY: sk_17ffc6565d302bf0447aad8511c67c7846a19a1c37edf9c9
   VoiceID: ErXwobaYiN019PkySvjV
+  url: 
   audioSource: {fileID: 8200013900641931861}
   TTsButton: {fileID: 3795099314316373458}
   textMessage: hello Testing if i can say smth or not hello
@@ -337,18 +337,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &8293170404458892062
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 743373647132091885}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f88adebe890fcd46a86c9f6cc3d63a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &801794282793625271
 GameObject:
   m_ObjectHideFlags: 0
