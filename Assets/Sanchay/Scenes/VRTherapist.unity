@@ -1557,9 +1557,12 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4734138067019342787, guid: 2b071fcf623c1b74fbff0f39d6c3701e, type: 3}
+      propertyPath: VoiceID
+      value: nPczCjzI2devNBz1zQrb
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734138067019342787, guid: 2b071fcf623c1b74fbff0f39d6c3701e, type: 3}
       propertyPath: textMessage
-      value: Hello SIgma gyatt, I am your new VR therapist from Ohio Hope to rizz
-        up your livvy dunne and get yo fanum tax so you stay mogging
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6810855573594209623, guid: 2b071fcf623c1b74fbff0f39d6c3701e, type: 3}
       propertyPath: m_LocalPosition.x
