@@ -52,12 +52,19 @@ public class therapistDialogues : MonoBehaviour
             StartCoroutine(moveTonextPoint(2));
         }
 
+        if(reachedPlayer && !interacted && playerAtMine)
+        {
+            playerFollowed = true;
+            currentDialogue = 1;
+            StartCoroutine(moveTonextPoint(2));
+        }
+
         if (interacted && !playerFollowed && !anim.GetBool("isWalking") && therapistScript.reached)
         {
             timer += Time.deltaTime;
         }
 
-        else if(interacted && playerFollowed && vineConnected)
+        else if(interacted && playerAtMine && vineConnected)
         {
             timer = 0f;
             //switch to next position and next dialogue

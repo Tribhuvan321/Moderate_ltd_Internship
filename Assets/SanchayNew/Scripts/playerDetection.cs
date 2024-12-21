@@ -5,7 +5,8 @@ using UnityEngine;
 public class playerDetection : MonoBehaviour
 {
 
-    therapistDialogues therapist;
+    public therapistDialogues therapist;
+
     private void OnTriggerStay(Collider other)
     {
         if (other.name=="Player")
