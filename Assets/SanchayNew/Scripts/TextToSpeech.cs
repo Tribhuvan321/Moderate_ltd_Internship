@@ -137,7 +137,7 @@ public class TextToSpeech : MonoBehaviour
 
     IEnumerator playAudioFile(string path)
     {
-        using (UnityWebRequest audioReq = UnityWebRequestMultimedia.GetAudioClip($"file://{path}", AudioType.MPEG))
+        /*using (UnityWebRequest audioReq = UnityWebRequestMultimedia.GetAudioClip($"file://{path}", AudioType.MPEG))
         {
             yield return audioReq.SendWebRequest();
 
@@ -152,6 +152,37 @@ public class TextToSpeech : MonoBehaviour
                 audioSource.clip = clip;
                 audioSource.Play();
                 anim.SetTrigger("talking");
+            }
+        }*/
+
+        string fileUrl = $"file://{path}"; // Ensure correct file format for local file access
+        Debug.Log($"Attempting to load audio from: {fileUrl}");
+
+        using (UnityWebRequest audioReq = UnityWebRequestMultimedia.GetAudioClip(fileUrl, AudioType.MPEG))
+        {
+            yield return audioReq.SendWebRequest();
+
+            if (audioReq.result == UnityWebRequest.Result.ConnectionError || audioReq.result == UnityWebRequest.Result.ProtocolError)
+            {
+                Debug.LogError($"Failed to load audio: {audioReq.error}");
+                //startTTs(textMessage);
+            }
+            else
+            {
+                AudioClip clip = DownloadHandlerAudioClip.GetContent(audioReq);
+
+                if (clip == null)
+                {
+                    Debug.LogError("Failed to create AudioClip from downloaded data");
+                    StartCoroutine(playAudioFile(path));
+                }
+                else
+                {
+                    Debug.Log("AudioClip successfully loaded");
+                    audioSource.clip = clip;
+                    audioSource.Play();
+                    anim.SetTrigger("talking");
+                }
             }
         }
     }

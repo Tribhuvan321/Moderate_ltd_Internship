@@ -7,12 +7,12 @@ public class StormManager : MonoBehaviour
     public ParticleSystem rain, thunder;
     public Material skyBoxCloudy;
 
-    [Range(0f, 15f)] public float maxThunderValue = 15f; 
+    [Range(0f, 20f)] public float maxThunderValue = 20f; 
     [Range(0f, 250f)] public float maxRainValue = 250f; 
 
     [Range(0f, 1f)] public float rotationSpeed;
 
-    [Range(0.25f, 1f)] public float exposureValue = 0.25f;
+    [Range(0.45f, 1f)] public float exposureValue = 0.25f;
 
     [Range(0f, 1f)] public float masterSlider = 0f; // 0 -> storm is very strong, 1 -> clear sky
 
@@ -43,7 +43,7 @@ public class StormManager : MonoBehaviour
     {
         thunderValue = Mathf.Lerp(maxThunderValue, 0f, masterSlider);
         rainValue = Mathf.Lerp(maxRainValue, 0f, masterSlider);
-        exposureValue = Mathf.Lerp(0.25f, 1f, masterSlider);
+        exposureValue = Mathf.Lerp(0.45f, 1f, masterSlider);
 
         // Apply changes
         ModifyExposure();
